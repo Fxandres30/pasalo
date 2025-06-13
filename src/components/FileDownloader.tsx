@@ -11,7 +11,7 @@ export default function FileDownloader() {
   const getDownloadUrl = async () => {
     setCopied(false);
 
-    const { data, error } = await supabase
+    const { data } = await supabase
       .storage
       .from('pasalo')
       .createSignedUrl(code, 60 * 60); // ⏱ válido por 1 hora
